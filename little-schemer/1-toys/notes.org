@@ -1,0 +1,21 @@
+* Notes for Ch. 1
+Also trying out org mode 
+
+* Emacs Notes
+#+BEGIN_SRC common-lisp
+  (defun org-xor (a b)
+     "Exclusive or."
+     (if a (not b) b))
+#+END_SRC
+
+Need to look up how to do inline source code highlights
+
+Stuff to remember:
+- C-x C-f
+- C-x g (for magit)
+- C-x 2 for horizontal split
+- C-x 3 for vert split
+- :term for terminal (bash) in buffer
+- can run scheme stuff etc
+
+
