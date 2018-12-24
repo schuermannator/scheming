@@ -1,13 +1,13 @@
-# Scheming with LISP
+# Scheming with LISP  
 Learning Scheme/Common Lisp
 
-## Resources
+## Resources  
 - The Little Schemer 4th Ed.
 - The Seasoned Schemer 2nd Ed.
 - The Reasoned Schemer 2nd Ed.
 - The Little Typer
 
-## Getting Started
+## Getting Started  
 
 Requirements:
-- 
+- test
