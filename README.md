@@ -9,11 +9,16 @@ Learning Scheme/Common Lisp
 
 ## Getting Started  
 
-Scheme Installation:
-- (MIT/GNU Scheme 10.1.3 Binary)[https://www.gnu.org/software/mit-scheme/]
+#### Scheme Installation:
+- [MIT/GNU Scheme 10.1.3 Binary](https://www.gnu.org/software/mit-scheme/)
 - Link after install
 ```bash
 $ sudo ln -s /Applications/MIT\:GNU\ Scheme\ 10.1.3.app/Contents/Resources /usr/local/lib/mit-scheme-x86-64
 $ sudo ln -s /usr/local/lib/mit-scheme-x86-64/mit-scheme /usr/local/bin/scheme
 ```
-- Invoke interpreter with `scheme`
+- Invoke interpreter with `scheme` and `C-c q` to quit
+
+#### Common Lisp Installation
+- [Steel Bank Common Lisp (SBCL)](http://sbcl.org/getting.html)
+- `$ brew install sbcl` (current version 1.4.14)
+- invoke with `sbcl` and `(quit)` to quit
