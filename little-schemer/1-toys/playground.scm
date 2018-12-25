@@ -1,6 +1,7 @@
 ; playground for chapter 1 of "The Little Schemer"
 
 ; learning about atoms and S-Expressions
+<<<<<<< HEAD
 ; S-Expression = Symbolic Expressions
 
 ;;; Their definition of a func 'atom?'
@@ -32,3 +33,5 @@
 
 (define nl ())
 (null? nl) ; null is defined only on lists
+=======
+>>>>>>> df7ae6777d6da19d2b133795444836c9feed33f7
