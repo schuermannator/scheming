@@ -36,3 +36,20 @@
 (define zach 'zachmo)
 (null? zach)
 
+(define testlist '(this is a list))
+(define newlist (cons a testlist))
+;(car newlist)
+;(cdr newlist)
+
+(Define member?
+  (lambda (a l)
+    (cond
+     ((null? l) #f)
+     (else (or (eq? (car l) a) (member? a (cdr l)))))))
+
+(define rember
+  (lambda (a lat)
+    (cond
+     ((null? lat) '())
+     ((eq? (car lat) a) (cdr lat))
+     (else (cons a (rember (cdr lat)))))))
