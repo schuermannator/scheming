@@ -1,6 +1,7 @@
 * Notes for Ch. 1
 Also trying out org mode 
 
+
 * Emacs Notes
 #+BEGIN_SRC common-lisp
   (defun org-xor (a b)
@@ -17,5 +18,7 @@ Stuff to remember:
 - C-x 3 for vert split
 - :term for terminal (bash) in buffer
 - can run scheme stuff etc
-
+- M-x run-scheme
+- reload with C-c C-l
+- s-expression before cursor C-x C-e
 
