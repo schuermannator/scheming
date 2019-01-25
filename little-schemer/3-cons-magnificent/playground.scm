@@ -38,10 +38,10 @@
 
 ; write the function "firsts"
 (define firsts
-  (lambda l
+  (lambda (l)
     (cond
      ((null? l) '())
-     (else (cons (car (car l) (firsts (cdr l))))))))
+     (else (cons (car (car l)) (firsts (cdr l)))))))
 
 (define l '((apple peach poo)
             (plum pear sherry)
@@ -50,7 +50,23 @@
 
 (firsts l)
 
+;;; Third Commandment:
+; When building a list, describe the first typical element and then cons it onto the natural recursion.
 
+;;; insertR
+; insert to the right
 
+(define insertR
+  (lambda (new old lat)
+    (cond
+     ((null? lat) '())
+     ((eq? (car lat) (old)) (cons (cons (car lat) (old)) (cdr lat)))
+     (else (cons (car lat) insertR(new old (cdr lat)))))))
+
+(define new 'jalapeno)
+(define old 'aand)
+(define lat '(tacos tamales aand salsa))
+
+(insertR new old lat)
 
 
