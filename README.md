@@ -25,4 +25,12 @@ $ sudo ln -s /usr/local/lib/mit-scheme-x86-64/mit-scheme /usr/local/bin/scheme
 - invoke with `sbcl` and `(quit)` to quit
 
 #### Development Environment
-- Evil-mode Emacs (Spacemacs?)
+- Evil-mode Emacs 
+- Using scheme-mode
+- `M-x run-scheme`
+- Load file `C-c C-l`
+- Eval s-expr before cursor: `C-x C-e`
+- Switch buffers `C-x o`
+
+#### Check this out
+[Cool Repo](https://github.com/siraben/zkeme80)

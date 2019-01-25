@@ -1,3 +1,5 @@
+;;; load prereqs
+(load "../prereqs.scm")
 
 ; check if something is in a list of atoms
 (define member?
@@ -23,5 +25,9 @@
      ((null? l) #t)
      (else (and (atom? (car l)) (lat? (cdr l)))))))
 
+; test lat
 (lat? '(a b c '(d e)))
 (lat? '(a c v dsa vd j))
+(lat? '(a b (c) d))
+
+
