@@ -7,6 +7,7 @@ Learning Scheme/Common Lisp
 - The Reasoned Schemer 2nd Ed.
 - The Little Typer
 - [Practical Common Lisp](http://www.gigamonkeys.com/book/)
+- [Teach Yourself Scheme in Fixnum Days](http://ds26gte.github.io/tyscheme/index.html)
 
 ## Getting Started  
 
