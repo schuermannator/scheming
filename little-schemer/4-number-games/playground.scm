@@ -68,9 +68,27 @@
 (define tup+
   (lambda (tup1 tup2)
     (cond
-     ((
+     ;((and (null? tup1) (null? tup2)) '())
+     ((null? tup1) tup2)
+     ((null? tup2) tup1)
+     (else (cons (+ (car tup1) (car tup2)) (tup+ (cdr tup1) (cdr tup2)))))))
 
 
-(define t1 (3 6 9 11 4))
-(define t2 (8 5 2 0 7))
+(define t1 '(3 6 9 11 4))
+(define t2 '(8 5 2 0 7 69))
 (tup+ t1 t2)
+
+(> 10 55)
+(< 10 55)
+
+; greater than using zero? and sub1
+(define gt
+  (lambda (m n)
+    (cond
+     ((zero? m) '#f)
+     ((zero? n) '#t)
+     (else (gt (sub1 m) (sub1 n))))))
+
+(gt 10 55)
+(gt 55 10)
+
