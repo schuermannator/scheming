@@ -34,7 +34,6 @@
 
 (minus 6 3)
 
-
 ; mess up
 (define times
   (lambda (a1 a2)
@@ -91,4 +90,98 @@
 
 (gt 10 55)
 (gt 55 10)
+
+(define exp
+  (lambda (n m)
+    (cond
+     ((zero? m) 1)
+     (else (* n (exp n (sub1 m)))))))
+
+(exp 2 5)
+
+(define div
+  (lambda (x y)
+    (cond
+     ((< x y) 0)
+     (else (add1 (div (- x y) y))))))
+
+(div 10 4)
+(div 12 5)
+
+;; length lat
+(define length
+  (lambda (lat)
+    (cond
+     ((null? lat) 0)
+     (else (add1 (length (cdr lat)))))))
+
+(length '(this is a test weee))
+
+;; one-indexed 'pick'
+(define pick
+  (lambda (n lat)
+    (cond
+     ((zero? n) '())
+     ((eq? n 1) (car lat))
+     (else (pick (sub1 n) (cdr lat))))))
+
+(pick 4 '(lasagna spaghetti ravioli macaroni meatball))
+;; returns '() for zero index 
+
+(define rempick
+  (lambda (n lat)
+    (cond
+     ((zero? n) '())
+     ((eq? n 1) (cdr lat))
+     (else (cons (car lat) (rempick (sub1 n) (cdr lat)))))))
+
+(rempick 4 '(lasagna spaghetti ravioli macaroni meatball))
+
+(define no-nums
+  (lambda (lat)
+    (cond
+     ((null? lat) '())
+     ((number? (car lat)) (no-nums (cdr lat)))
+     (else (cons (car lat) (no-nums (cdr lat)))))))
+
+(no-nums '(5 pears 6 prunes 9 dates))
+
+;; opposite from above
+(define all-nums
+  (lambda (lat)
+    (cond
+     ((null? lat) '())
+     ((number? (car lat)) (cons (car lat) (all-nums (cdr lat))))
+     (else (all-nums (cdr lat))))))
+
+(all-nums '(5 pears 6 prunes 9 dates))
+
+(define eqan?
+  (lambda (a1 a2)
+    (cond
+     ((and (number? a1) (number? a2)) (= a1 a2))
+     ((or (number? a1) (number? a2)) #f)
+     (else (eq? a1 a2)))))
+
+(eqan? 5 zach)
+
+;; count number of occurances of atom a in lat
+(define occur
+  (lambda (a lat)
+    (cond
+     ((null? lat) 0)
+     ((eq? (car lat) a) (add1 (occur a (cdr lat))))
+     (else (occur a (cdr lat))))))
+
+
+(occur 'zach '(this is a zach test of zach for zach because zach a))
+
+(define one?
+  (lambda (n)
+    (cond
+     ((zero? n) #f)
+     (else (zero? (sub1 n))))))
+
+(one? 1)
+(one? 6)
 
