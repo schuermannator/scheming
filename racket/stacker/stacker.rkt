@@ -1,8 +1,9 @@
 #lang racket
 
-(require 2htdp/image) ; draw a picture
-(let sierpinski ([n 8])
-  (cond
-    [(zero? n) (triangle 2 'solid 'red)]
-    [else (define t (sierpinski (- n 1)))
-          (freeze (above t (beside t t)))]))
+(define (read-syntax path port)
+  (define src-lines (port->lines port))
+  (define src-datums (format-datums ''(handle ~a) src-lines))
+  (define module-datum `(module stacker racket
+                          ,@src-datums))
+  (datum->syntax #f module-datum))
+(provide read-syntax)

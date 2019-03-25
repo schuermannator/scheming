@@ -59,9 +59,9 @@
     (cond
      ((null? l) '())
      ((atom? (car l))
-      (cond
-       ((eq? (car l) old) (cons new (cons old (insertL* new old (cdr l)))))
-       (else (cons (car l) (insertL* new old (cdr l))))))
+      (if (eq? (car l) old)
+          (cons new (cons old (insertL* new old (cdr l))))
+          (cons (car l) (insertL* new old (cdr l)))))
      (else (cons (insertL* new old (car l)) (insertL* new old (cdr l)))))))
 
 (insertL* 'roast 'chuck li)
@@ -77,5 +77,6 @@
      (else (or (member* a (car l)) (member* a (cdr l)))))))
 
 (member* 'cream ll)
+(insertL* 'roast 'chuck li)
 
 ;; (define leftmost
