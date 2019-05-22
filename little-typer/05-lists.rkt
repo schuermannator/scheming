@@ -67,3 +67,37 @@
 (define length-Atom (length Atom))
 
 (length-Atom rug)
+
+(claim step-append
+       (Pi ((E U))
+           (-> E (List E) (List E) (List E))))
+(define step-append
+  (lambda (E)
+    (lambda (e es append-es)
+      (:: e append-es))))
+
+(claim append
+       (Pi ((E U))
+           (-> (List E) (List E) (List E))))
+(define append
+  (lambda (E)
+    (lambda (start end)
+      (rec-List
+       start
+       end
+       (step-append E)))))
+
+((append Atom) rug rug)
+
+(claim snoc
+       (Pi ((E U))
+           (-> (List E) E (List E))))
+(define snoc
+  (lambda (E)
+    (lambda (start e)
+      (rec-List
+       start
+       (:: e nil)
+       (step-append E)))))
+
+((snoc Atom) rug 'rug)
